@@ -1,137 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mahmud | Gaming Thumbnail Designer</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0f0f0f;
-      color: #ffffff;
-    }
-    header {
-      padding: 40px 20px;
-      text-align: center;
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      margin-top: 10px;
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .section-title {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      border-left: 5px solid #2575fc;
-      padding-left: 10px;
-    }
-    .about p {
-      line-height: 1.6;
-      color: #dddddd;
-    }
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-    .skill {
-      background: #1e1e1e;
-      padding: 12px 18px;
-      border-radius: 20px;
-      font-size: 0.95rem;
-    }
-    .portfolio {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .portfolio-item {
-      background: #1b1b1b;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .portfolio-item img {
-      width: 100%;
-      display: block;
-    }
-    .portfolio-item p {
-      padding: 10px;
-      text-align: center;
-      font-size: 0.95rem;
-    }
-    .contact {
-      text-align: center;
-    }
-    .contact a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      background: #2575fc;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 25px;
-      transition: 0.3s;
-    }
-    .contact a:hover {
-      background: #6a11cb;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.85rem;
-      color: #aaa;
-      background: #0a0a0a;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahmud | Gaming Thumbnail Designer</title>
+<style>
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  /* Custom background image + dark overlay */
+  background: linear-gradient(rgba(15,15,15,0.85), rgba(15,15,15,0.85)), 
+              url('https://i.postimg.cc/YSxv72NH/66be81f4b126b03a8d7d4fa7189b2b44.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color:#fff;
+}
+header{
+  padding:40px 20px;
+  text-align:center;
+  background: linear-gradient(135deg,#6a11cb,#2575fc);
+}
+header h1{
+  margin:0;
+  font-size:2.5rem;
+}
+header p{
+  margin-top:10px;
+  font-size:1.1rem;
+  opacity:0.9;
+}
+section{
+  padding:40px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+.section-title{
+  font-size:1.8rem;
+  margin-bottom:20px;
+  border-left:5px solid #2575fc;
+  padding-left:10px;
+}
+.about p{
+  line-height:1.6;
+  color:#dddddd;
+}
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+}
+.skill{
+  background:#1e1e1e;
+  padding:12px 18px;
+  border-radius:20px;
+  font-size:0.95rem;
+}
+.portfolio{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+.portfolio-item{
+  background:rgba(27,27,27,0.9);
+  border-radius:12px;
+  overflow:hidden;
+  transition:0.3s;
+  cursor:pointer;
+}
+.portfolio-item img{
+  width:100%;
+  display:block;
+}
+.portfolio-item:hover{
+  transform: scale(1.05);
+}
+.portfolio-item h3{
+  margin:5px 10px 10px 10px;
+  font-size:1rem;
+  text-align:center;
+}
+/* Lightbox CSS */
+#lightbox{
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.85);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+#lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
+}
+.contact{
+  text-align:center;
+}
+.contact a{
+  display:inline-block;
+  margin:10px;
+  padding:12px 20px;
+  background:#2575fc;
+  color:#fff;
+  text-decoration:none;
+  border-radius:25px;
+  transition:0.3s;
+}
+.contact a:hover{
+  background:#6a11cb;
+}
+footer{
+  text-align:center;
+  padding:20px;
+  font-size:0.85rem;
+  color:#aaa;
+  background:#0a0a0a;
+}
+</style>
 </head>
-<body>  <header>
-    <h1>Mahmud</h1>
-    <p>Gaming Thumbnail Designer • Video Editor • BGMI Creator</p>
-  </header>  <section class="about">
-    <h2 class="section-title">About Me</h2>
-    <p>
-      I am a gaming-focused thumbnail designer and video editor. I specialize in creating eye-catching thumbnails for BGMI and esports creators that increase click-through rate and viewer engagement.
-    </p>
-  </section>  <section>
-    <h2 class="section-title">Skills</h2>
-    <div class="skills">
-      <div class="skill">Gaming Thumbnails</div>
-      <div class="skill">YouTube Thumbnail Design</div>
-      <div class="skill">BGMI / Esports Posters</div>
-      <div class="skill">Video Editing</div>
-      <div class="skill">Branding for Creators</div>
-    </div>
-  </section>  <section>
-    <h2 class="section-title">Portfolio</h2>
-    <div class="portfolio">
-      <div class="portfolio-item">
-        <img src="https://i.postimg.cc/26HwT0hL/Picsart-25-12-22-17-10-17-123.jpg" alt="Thumbnail 1" />
-        <p>BGMI Scrims Thumbnail</p>
-      </div>
-      <div class="portfolio-item">
-        <img src="https://i.postimg.cc/BQnLcqnn/img-(7).webp" alt="Thumbnail 2" />
-        <p>BGMI Live Stream Thumbnail</p>
-      </div>
-      <div class="portfolio-item">
-        <img src="https://i.postimg.cc/FKNV4MxV/Picsart-26-01-22-01-48-20-305.png" alt="Thumbnail 3" />
-        <p>Anime Style Gaming Thumbnail</p>
-        </div>
-      <div class="portfolio-item">
-        <img src="https://i.postimg.cc/yNxyfwXW/Picsart-26-01-22-22-52-17-411.jpg" alt="Thumbnail 3" />
-        <p>SCRIMS POSTER</p>
-      </div>
-    </div>
+<body>
+
+<header>
+<h1>Mahmud</h1>
+<p>Gaming Thumbnail Designer • Video Editor • BGMI Creator</p>
+</header>
+
+<section class="about">
+<h2 class="section-title">About Me</h2>
+<p>I am a gaming-focused thumbnail designer and video editor. I specialize in creating eye-catching thumbnails for BGMI and esports creators that increase click-through rate and viewer engagement.</p>
+</section>
+
+<section>
+<h2 class="section-title">Skills</h2>
+<div class="skills">
+<div class="skill">Gaming Thumbnails</div>
+<div class="skill">YouTube Thumbnail Design</div>
+<div class="skill">BGMI / Esports Posters</div>
+<div class="skill">Video Editing</div>
+<div class="skill">Branding for Creators</div>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Portfolio</h2>
+<div class="portfolio" id="portfolio">
+<!-- Portfolio items will load here from Google Sheet -->
+</div>
+</section>
+
+<!-- Lightbox for enlarged images -->
+<div id="lightbox">
+  <img src="" alt="Enlarged Image">
+</div>
+
+<section class="contact">
+<h2 class="section-title">Contact Me</h2>
+<a href="https://instagram.com/mahmud07_bgmi" target="_blank">Instagram DM</a>
+<a href="mailto:hussainmahmud919@gmail.com">Email Me</a>
+<a href="https://youtube.com/@mahmud07_bgmi?si=s_n2vpp3Koq00atA" target="_blank">YOUTUBE</a>
+</section>
+
+<footer>
+© 2026 Mahmud | Gaming Thumbnail Designer
+</footer>
+
+<script>
+// Google Sheet OpenSheet URL
+const sheetURL = "https://opensheet.elk.sh/1Zxik5DT4dXw82DNwlnrBuTkMJ4lJYM3aCGLqiBDAqhI/Portfolio";
+
+fetch(sheetURL)
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById('portfolio');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+
+    data.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'portfolio-item';
+      div.innerHTML = `
+        <img src="${item.image}" alt="${item.title}" />
+        <h3>${item.title}</h3>
+      `;
+      // Click to open lightbox
+      div.querySelector('img').addEventListener('click', () => {
+        lightboxImg.src = item.image;
+        lightbox.style.display = 'flex';
+      });
+      container.appendChild(div);
+    });
+
+    // Click anywhere on lightbox to close
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+  })
+  .catch(err => console.error("Error loading portfolio:", err));
+</script>
+
+</body>
+</html>    </div>
   </section>  <section class="contact">
     <h2 class="section-title">Contact Me</h2>
     <a href="https://instagram.com/mahmud07_bgmi" target="_blank">Instagram DM</a>
@@ -141,4 +211,5 @@
     © 2026 Mahmud | Gaming Thumbnail Designer
   </footer></body>
 </html>
+
 
